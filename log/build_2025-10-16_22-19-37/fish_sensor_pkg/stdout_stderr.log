@@ -1,0 +1,36 @@
+[ 20%] Built target i2c_device
+[ 40%] Built target madgwick_filter
+[ 60%] Built target as5600
+[ 70%] [32mBuilding CXX object CMakeFiles/mpu6500.dir/src/mpu6500.cpp.o[0m
+[ 80%] [32m[1mLinking CXX static library libmpu6500.a[0m
+[ 80%] Built target mpu6500
+[ 90%] [32m[1mLinking CXX executable fish_sensor_node[0m
+[100%] Built target fish_sensor_node
+-- Install configuration: ""
+-- Installing: /home/a-raspi1/fishing_ws/install/fish_sensor_pkg/lib/fish_sensor_pkg/fish_sensor_node
+-- Set runtime path of "/home/a-raspi1/fishing_ws/install/fish_sensor_pkg/lib/fish_sensor_pkg/fish_sensor_node" to ""
+-- Up-to-date: /home/a-raspi1/fishing_ws/install/fish_sensor_pkg/include
+-- Up-to-date: /home/a-raspi1/fishing_ws/install/fish_sensor_pkg/include/fish_sensor_pkg
+-- Up-to-date: /home/a-raspi1/fishing_ws/install/fish_sensor_pkg/include/fish_sensor_pkg/mpu6500.hpp
+-- Up-to-date: /home/a-raspi1/fishing_ws/install/fish_sensor_pkg/include/fish_sensor_pkg/as5600.hpp
+-- Up-to-date: /home/a-raspi1/fishing_ws/install/fish_sensor_pkg/include/fish_sensor_pkg/i2c_device.hpp
+-- Up-to-date: /home/a-raspi1/fishing_ws/install/fish_sensor_pkg/include/fish_sensor_pkg/madgwick_filter.hpp
+-- Up-to-date: /home/a-raspi1/fishing_ws/install/fish_sensor_pkg/share/fish_sensor_pkg/launch
+-- Up-to-date: /home/a-raspi1/fishing_ws/install/fish_sensor_pkg/share/fish_sensor_pkg/launch/fish_sensor.launch.py
+-- Up-to-date: /home/a-raspi1/fishing_ws/install/fish_sensor_pkg/share/fish_sensor_pkg/params
+-- Up-to-date: /home/a-raspi1/fishing_ws/install/fish_sensor_pkg/share/fish_sensor_pkg/params/fish_sensor_params.yaml
+-- Up-to-date: /home/a-raspi1/fishing_ws/install/fish_sensor_pkg/share/ament_index/resource_index/package_run_dependencies/fish_sensor_pkg
+-- Up-to-date: /home/a-raspi1/fishing_ws/install/fish_sensor_pkg/share/ament_index/resource_index/parent_prefix_path/fish_sensor_pkg
+-- Up-to-date: /home/a-raspi1/fishing_ws/install/fish_sensor_pkg/share/fish_sensor_pkg/environment/ament_prefix_path.sh
+-- Up-to-date: /home/a-raspi1/fishing_ws/install/fish_sensor_pkg/share/fish_sensor_pkg/environment/ament_prefix_path.dsv
+-- Up-to-date: /home/a-raspi1/fishing_ws/install/fish_sensor_pkg/share/fish_sensor_pkg/environment/path.sh
+-- Up-to-date: /home/a-raspi1/fishing_ws/install/fish_sensor_pkg/share/fish_sensor_pkg/environment/path.dsv
+-- Up-to-date: /home/a-raspi1/fishing_ws/install/fish_sensor_pkg/share/fish_sensor_pkg/local_setup.bash
+-- Up-to-date: /home/a-raspi1/fishing_ws/install/fish_sensor_pkg/share/fish_sensor_pkg/local_setup.sh
+-- Up-to-date: /home/a-raspi1/fishing_ws/install/fish_sensor_pkg/share/fish_sensor_pkg/local_setup.zsh
+-- Up-to-date: /home/a-raspi1/fishing_ws/install/fish_sensor_pkg/share/fish_sensor_pkg/local_setup.dsv
+-- Installing: /home/a-raspi1/fishing_ws/install/fish_sensor_pkg/share/fish_sensor_pkg/package.dsv
+-- Up-to-date: /home/a-raspi1/fishing_ws/install/fish_sensor_pkg/share/ament_index/resource_index/packages/fish_sensor_pkg
+-- Up-to-date: /home/a-raspi1/fishing_ws/install/fish_sensor_pkg/share/fish_sensor_pkg/cmake/fish_sensor_pkgConfig.cmake
+-- Up-to-date: /home/a-raspi1/fishing_ws/install/fish_sensor_pkg/share/fish_sensor_pkg/cmake/fish_sensor_pkgConfig-version.cmake
+-- Up-to-date: /home/a-raspi1/fishing_ws/install/fish_sensor_pkg/share/fish_sensor_pkg/package.xml

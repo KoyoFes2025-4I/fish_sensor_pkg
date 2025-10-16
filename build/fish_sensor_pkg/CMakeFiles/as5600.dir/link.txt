@@ -1,0 +1,2 @@
+/usr/bin/ar qc libas5600.a CMakeFiles/as5600.dir/src/as5600.cpp.o
+/usr/bin/ranlib libas5600.a

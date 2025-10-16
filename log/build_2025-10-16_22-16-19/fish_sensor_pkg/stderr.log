@@ -1,0 +1,9 @@
+In file included from [01m[K/home/a-raspi1/fishing_ws/src/fish_sensor_pkg/src/madgwick_filter.cpp:1[m[K:
+[01m[K/home/a-raspi1/fishing_ws/src/fish_sensor_pkg/include/fish_sensor_pkg/madgwick_filter.hpp:5:10:[m[K [01;31m[Kfatal error: [m[Ksensor_msgs/msg/imu.hpp: そのようなファイルやディレクトリはありません
+    5 | #include [01;31m[K"sensor_msgs/msg/imu.hpp"[m[K
+      |          [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+compilation terminated.
+gmake[2]: *** [CMakeFiles/madgwick_filter.dir/build.make:76: CMakeFiles/madgwick_filter.dir/src/madgwick_filter.cpp.o] エラー 1
+gmake[1]: *** [CMakeFiles/Makefile2:223: CMakeFiles/madgwick_filter.dir/all] エラー 2
+gmake[1]: *** 未完了のジョブを待っています....
+gmake: *** [Makefile:146: all] エラー 2

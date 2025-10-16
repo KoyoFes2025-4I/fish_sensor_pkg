@@ -1,0 +1,8 @@
+In file included from [01m[K/home/a-raspi1/fishing_ws/src/fish_sensor_pkg/src/mpu6500.cpp:1[m[K:
+[01m[K/home/a-raspi1/fishing_ws/src/fish_sensor_pkg/include/fish_sensor_pkg/mpu6500.hpp:5:10:[m[K [01;31m[Kfatal error: [m[Krclcpp/rclcpp.hpp: そのようなファイルやディレクトリはありません
+    5 | #include [01;31m[K"rclcpp/rclcpp.hpp"[m[K // rclcppを追加
+      |          [01;31m[K^~~~~~~~~~~~~~~~~~~[m[K
+compilation terminated.
+gmake[2]: *** [CMakeFiles/mpu6500.dir/build.make:76: CMakeFiles/mpu6500.dir/src/mpu6500.cpp.o] エラー 1
+gmake[1]: *** [CMakeFiles/Makefile2:171: CMakeFiles/mpu6500.dir/all] エラー 2
+gmake: *** [Makefile:146: all] エラー 2

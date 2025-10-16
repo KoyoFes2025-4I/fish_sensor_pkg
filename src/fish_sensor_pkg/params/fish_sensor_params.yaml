@@ -1,0 +1,18 @@
+fish_sensor_node:
+  ros__parameters:
+    # 使用する釣り竿のIDリスト
+    rod_ids: ["0", "1"]
+
+    # 釣り竿ID: 0 の設定
+    rod_0:
+      i2c_bus_mpu: "/dev/i2c-3"
+      i2c_addr_mpu: 0x68
+      i2c_bus_as: "/dev/i2c-3"
+      i2c_addr_as: 0x36
+
+    # 釣り竿ID: 1 の設定
+    rod_1:
+      i2c_bus_mpu: "/dev/i2c-4"
+      i2c_addr_mpu: 0x69
+      i2c_bus_as: "/dev/i2c-4"
+      i2c_addr_as: 0x36

@@ -1,0 +1,15 @@
+[0.062s] Invoking command in '/home/a-raspi1/fishing_ws/build/fish_sensor_pkg': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /home/a-raspi1/.local/bin/cmake --build /home/a-raspi1/fishing_ws/build/fish_sensor_pkg -- -j4 -l4
+[0.340s] [ 20%] Built target i2c_device
+[0.345s] [ 40%] Built target madgwick_filter
+[0.403s] [ 60%] Built target as5600
+[0.468s] [ 70%] [32mBuilding CXX object CMakeFiles/mpu6500.dir/src/mpu6500.cpp.o[0m
+[13.439s] [ 80%] [32m[1mLinking CXX static library libmpu6500.a[0m
+[13.554s] [ 80%] Built target mpu6500
+[13.685s] [ 90%] [32mBuilding CXX object CMakeFiles/fish_sensor_node.dir/src/fish_sensor_node.cpp.o[0m
+[36.007s] [100%] [32m[1mLinking CXX executable fish_sensor_node[0m
+[36.440s] /usr/bin/ld: -lrclcpp が見つかりません: そのようなファイルやディレクトリはありません
+[36.861s] collect2: error: ld returned 1 exit status
+[36.865s] gmake[2]: *** [CMakeFiles/fish_sensor_node.dir/build.make:179: fish_sensor_node] エラー 1
+[36.867s] gmake[1]: *** [CMakeFiles/Makefile2:252: CMakeFiles/fish_sensor_node.dir/all] エラー 2
+[36.868s] gmake: *** [Makefile:146: all] エラー 2
+[36.896s] Invoked command in '/home/a-raspi1/fishing_ws/build/fish_sensor_pkg' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /home/a-raspi1/.local/bin/cmake --build /home/a-raspi1/fishing_ws/build/fish_sensor_pkg -- -j4 -l4

@@ -1,0 +1,23 @@
+[0.415s] Invoking command in '/home/a-raspi1/fishing_ws/build/fish_sensor_pkg': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /home/a-raspi1/.local/bin/cmake --build /home/a-raspi1/fishing_ws/build/fish_sensor_pkg -- -j4 -l4
+[1.141s] [ 20%] Built target madgwick_filter
+[1.143s] [ 40%] Built target i2c_device
+[1.213s] [ 50%] [32mBuilding CXX object CMakeFiles/mpu6500.dir/src/mpu6500.cpp.o[0m
+[1.215s] [ 70%] Built target as5600
+[3.832s] [01m[K/home/a-raspi1/fishing_ws/src/fish_sensor_pkg/src/mpu6500.cpp:[m[K In member function ‘[01m[KImuData MPU6500::readSensorData()[m[K’:
+[3.833s] [01m[K/home/a-raspi1/fishing_ws/src/fish_sensor_pkg/src/mpu6500.cpp:91:8:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id at end of input
+[3.833s]    91 |     int
+[3.834s]       |        [01;31m[K^[m[K
+[3.834s] [01m[K/home/a-raspi1/fishing_ws/src/fish_sensor_pkg/src/mpu6500.cpp:91:8:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K}[m[K’ at end of input
+[3.835s] [01m[K/home/a-raspi1/fishing_ws/src/fish_sensor_pkg/src/mpu6500.cpp:80:35:[m[K [01;36m[Knote: [m[Kto match this ‘[01m[K{[m[K’
+[3.835s]    80 | ImuData MPU6500::readSensorData() [01;36m[K{[m[K
+[3.836s]       |                                   [01;36m[K^[m[K
+[3.840s] [01m[K/home/a-raspi1/fishing_ws/src/fish_sensor_pkg/src/mpu6500.cpp:90:13:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kax_raw[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+[3.840s]    90 |     int16_t [01;35m[Kax_raw[m[K = (data[0] << 8) | data[1];
+[3.841s]       |             [01;35m[K^~~~~~[m[K
+[4.125s] [01m[K/home/a-raspi1/fishing_ws/src/fish_sensor_pkg/src/mpu6500.cpp:91:8:[m[K [01;35m[Kwarning: [m[Kcontrol reaches end of non-void function [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreturn-type-Wreturn-type]8;;[m[K]
+[4.125s]    91 |     int
+[4.126s]       |        [01;35m[K^[m[K
+[4.335s] gmake[2]: *** [CMakeFiles/mpu6500.dir/build.make:76: CMakeFiles/mpu6500.dir/src/mpu6500.cpp.o] エラー 1
+[4.336s] gmake[1]: *** [CMakeFiles/Makefile2:171: CMakeFiles/mpu6500.dir/all] エラー 2
+[4.340s] gmake: *** [Makefile:146: all] エラー 2
+[4.366s] Invoked command in '/home/a-raspi1/fishing_ws/build/fish_sensor_pkg' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /home/a-raspi1/.local/bin/cmake --build /home/a-raspi1/fishing_ws/build/fish_sensor_pkg -- -j4 -l4

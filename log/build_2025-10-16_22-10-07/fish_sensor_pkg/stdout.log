@@ -1,0 +1,4 @@
+[ 20%] Built target i2c_device
+[ 40%] Built target madgwick_filter
+[ 60%] Built target as5600
+[ 70%] [32mBuilding CXX object CMakeFiles/mpu6500.dir/src/mpu6500.cpp.o[0m

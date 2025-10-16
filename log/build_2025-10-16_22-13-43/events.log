@@ -1,0 +1,222 @@
+[0.000000] (-) TimerEvent: {}
+[0.000948] (fish_sensor_pkg) JobQueued: {'identifier': 'fish_sensor_pkg', 'dependencies': OrderedDict()}
+[0.001405] (fish_sensor_pkg) JobStarted: {'identifier': 'fish_sensor_pkg'}
+[0.043312] (fish_sensor_pkg) JobProgress: {'identifier': 'fish_sensor_pkg', 'progress': 'cmake'}
+[0.046632] (fish_sensor_pkg) JobProgress: {'identifier': 'fish_sensor_pkg', 'progress': 'build'}
+[0.050462] (fish_sensor_pkg) Command: {'cmd': ['/home/a-raspi1/.local/bin/cmake', '--build', '/home/a-raspi1/fishing_ws/build/fish_sensor_pkg', '--', '-j4', '-l4'], 'cwd': '/home/a-raspi1/fishing_ws/build/fish_sensor_pkg', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'a-raspi1'), ('SSH_CLIENT', '192.168.110.100 55900 22'), ('XDG_SESSION_TYPE', 'tty'), ('GIT_ASKPASS', '/home/a-raspi1/.vscode-server/cli/servers/Stable-385651c938df8a906869babee516bffd0ddb9829/server/extensions/git/dist/askpass.sh'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib'), ('BROWSER', '/home/a-raspi1/.vscode-server/cli/servers/Stable-385651c938df8a906869babee516bffd0ddb9829/server/bin/helpers/browser.sh'), ('MOTD_SHOWN', 'pam'), ('HOME', '/home/a-raspi1'), ('TERM_PROGRAM_VERSION', '1.104.3'), ('VSCODE_IPC_HOOK_CLI', '/run/user/1000/vscode-ipc-79937ec2-4757-41c4-8a71-1fd50f0aa413.sock'), ('ROS_PYTHON_VERSION', '3'), ('VSCODE_GIT_ASKPASS_MAIN', '/home/a-raspi1/.vscode-server/cli/servers/Stable-385651c938df8a906869babee516bffd0ddb9829/server/extensions/git/dist/askpass-main.js'), ('VSCODE_GIT_ASKPASS_NODE', '/home/a-raspi1/.vscode-server/cli/servers/Stable-385651c938df8a906869babee516bffd0ddb9829/server/node'), ('SSL_CERT_FILE', '/usr/lib/ssl/certs/ca-certificates.crt'), ('VSCODE_PYTHON_AUTOACTIVATE_GUARD', '1'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('DEBUGINFOD_URLS', 'https://debuginfod.ubuntu.com'), ('COLCON_PREFIX_PATH', '/home/a-raspi1/fishing_ws/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'a-raspi1'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('TERM', 'xterm-256color'), ('XDG_SESSION_ID', '2'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/home/a-raspi1/.vscode-server/cli/servers/Stable-385651c938df8a906869babee516bffd0ddb9829/server/bin/remote-cli:/home/a-raspi1/.local/bin:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/a-raspi1/.vscode-server/data/User/globalStorage/github.copilot-chat/debugCommand'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('SSL_CERT_DIR', '/usr/lib/ssl/certs'), ('LANG', 'ja_JP.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('VSCODE_GIT_IPC_HANDLE', '/run/user/1000/vscode-git-2f87293b22.sock'), ('TERM_PROGRAM', 'vscode'), ('AMENT_PREFIX_PATH', '/home/a-raspi1/fishing_ws/install/fish_sensor_pkg:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('VSCODE_GIT_ASKPASS_EXTRA_ARGS', ''), ('PWD', '/home/a-raspi1/fishing_ws/build/fish_sensor_pkg'), ('SSH_CONNECTION', '192.168.110.100 55900 192.168.110.103 22'), ('XDG_DATA_DIRS', '/usr/share/gnome:/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/home/a-raspi1/fishing_ws/install/fish_sensor_pkg:/opt/ros/humble')]), 'shell': False}
+[0.097349] (-) TimerEvent: {}
+[0.198082] (-) TimerEvent: {}
+[0.286248] (fish_sensor_pkg) StdoutLine: {'line': b'-- Found ament_cmake: 1.3.12 (/opt/ros/humble/share/ament_cmake/cmake)\n'}
+[0.298290] (-) TimerEvent: {}
+[0.399049] (-) TimerEvent: {}
+[0.499860] (-) TimerEvent: {}
+[0.600982] (-) TimerEvent: {}
+[0.701714] (-) TimerEvent: {}
+[0.802543] (-) TimerEvent: {}
+[0.903480] (-) TimerEvent: {}
+[1.004225] (-) TimerEvent: {}
+[1.104998] (-) TimerEvent: {}
+[1.205780] (-) TimerEvent: {}
+[1.306515] (-) TimerEvent: {}
+[1.400286] (fish_sensor_pkg) StdoutLine: {'line': b'-- Found rclcpp: 16.0.15 (/opt/ros/humble/share/rclcpp/cmake)\n'}
+[1.406692] (-) TimerEvent: {}
+[1.507422] (-) TimerEvent: {}
+[1.608166] (-) TimerEvent: {}
+[1.647511] (fish_sensor_pkg) StdoutLine: {'line': b'-- Found rosidl_generator_c: 3.1.7 (/opt/ros/humble/share/rosidl_generator_c/cmake)\n'}
+[1.664476] (fish_sensor_pkg) StdoutLine: {'line': b'-- Found rosidl_adapter: 3.1.7 (/opt/ros/humble/share/rosidl_adapter/cmake)\n'}
+[1.702365] (fish_sensor_pkg) StdoutLine: {'line': b'-- Found rosidl_generator_cpp: 3.1.7 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)\n'}
+[1.708341] (-) TimerEvent: {}
+[1.764938] (fish_sensor_pkg) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[1.808531] (-) TimerEvent: {}
+[1.848965] (fish_sensor_pkg) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[1.908716] (-) TimerEvent: {}
+[2.009456] (-) TimerEvent: {}
+[2.057319] (fish_sensor_pkg) StdoutLine: {'line': b'-- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)\n'}
+[2.065580] (fish_sensor_pkg) StdoutLine: {'line': b'-- Found rmw_fastrtps_cpp: 6.2.8 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)\n'}
+[2.109667] (-) TimerEvent: {}
+[2.210386] (-) TimerEvent: {}
+[2.311193] (-) TimerEvent: {}
+[2.411923] (-) TimerEvent: {}
+[2.512672] (-) TimerEvent: {}
+[2.613430] (-) TimerEvent: {}
+[2.714186] (-) TimerEvent: {}
+[2.814941] (-) TimerEvent: {}
+[2.915707] (-) TimerEvent: {}
+[3.016462] (-) TimerEvent: {}
+[3.117217] (-) TimerEvent: {}
+[3.217947] (-) TimerEvent: {}
+[3.280525] (fish_sensor_pkg) StdoutLine: {'line': b"-- Using RMW implementation 'rmw_fastrtps_cpp' as default\n"}
+[3.318139] (-) TimerEvent: {}
+[3.418895] (-) TimerEvent: {}
+[3.519755] (-) TimerEvent: {}
+[3.588815] (fish_sensor_pkg) StdoutLine: {'line': b'-- Found sensor_msgs: 4.9.0 (/opt/ros/humble/share/sensor_msgs/cmake)\n'}
+[3.619945] (-) TimerEvent: {}
+[3.720766] (-) TimerEvent: {}
+[3.771582] (fish_sensor_pkg) StdoutLine: {'line': b'-- Found rclcpp_components: 16.0.15 (/opt/ros/humble/share/rclcpp_components/cmake)\n'}
+[3.820951] (-) TimerEvent: {}
+[3.921722] (-) TimerEvent: {}
+[4.022541] (-) TimerEvent: {}
+[4.123340] (-) TimerEvent: {}
+[4.224243] (-) TimerEvent: {}
+[4.249485] (fish_sensor_pkg) StdoutLine: {'line': b'-- Configuring done (4.0s)\n'}
+[4.324428] (-) TimerEvent: {}
+[4.375791] (fish_sensor_pkg) StdoutLine: {'line': b'-- Generating done (0.1s)\n'}
+[4.406805] (fish_sensor_pkg) StdoutLine: {'line': b'-- Build files have been written to: /home/a-raspi1/fishing_ws/build/fish_sensor_pkg\n'}
+[4.424671] (-) TimerEvent: {}
+[4.525631] (-) TimerEvent: {}
+[4.540344] (fish_sensor_pkg) StdoutLine: {'line': b'[ 20%] Built target i2c_device\n'}
+[4.547582] (fish_sensor_pkg) StdoutLine: {'line': b'[ 40%] Built target madgwick_filter\n'}
+[4.615457] (fish_sensor_pkg) StdoutLine: {'line': b'[ 70%] \x1b[32mBuilding CXX object CMakeFiles/mpu6500.dir/src/mpu6500.cpp.o\x1b[0m\n'}
+[4.616270] (fish_sensor_pkg) StdoutLine: {'line': b'[ 70%] Built target as5600\n'}
+[4.625850] (-) TimerEvent: {}
+[4.726650] (-) TimerEvent: {}
+[4.828436] (-) TimerEvent: {}
+[4.929199] (-) TimerEvent: {}
+[5.029927] (-) TimerEvent: {}
+[5.130686] (-) TimerEvent: {}
+[5.231445] (-) TimerEvent: {}
+[5.332191] (-) TimerEvent: {}
+[5.432995] (-) TimerEvent: {}
+[5.533741] (-) TimerEvent: {}
+[5.634573] (-) TimerEvent: {}
+[5.735528] (-) TimerEvent: {}
+[5.836302] (-) TimerEvent: {}
+[5.937068] (-) TimerEvent: {}
+[6.037867] (-) TimerEvent: {}
+[6.138668] (-) TimerEvent: {}
+[6.239571] (-) TimerEvent: {}
+[6.340386] (-) TimerEvent: {}
+[6.441296] (-) TimerEvent: {}
+[6.542043] (-) TimerEvent: {}
+[6.642788] (-) TimerEvent: {}
+[6.743596] (-) TimerEvent: {}
+[6.844346] (-) TimerEvent: {}
+[6.945103] (-) TimerEvent: {}
+[7.045950] (-) TimerEvent: {}
+[7.146785] (-) TimerEvent: {}
+[7.247633] (-) TimerEvent: {}
+[7.348450] (-) TimerEvent: {}
+[7.449277] (-) TimerEvent: {}
+[7.550113] (-) TimerEvent: {}
+[7.650996] (-) TimerEvent: {}
+[7.751851] (-) TimerEvent: {}
+[7.852680] (-) TimerEvent: {}
+[7.953677] (-) TimerEvent: {}
+[8.054554] (-) TimerEvent: {}
+[8.155456] (-) TimerEvent: {}
+[8.256300] (-) TimerEvent: {}
+[8.357164] (-) TimerEvent: {}
+[8.457981] (-) TimerEvent: {}
+[8.558777] (-) TimerEvent: {}
+[8.659631] (-) TimerEvent: {}
+[8.760428] (-) TimerEvent: {}
+[8.861253] (-) TimerEvent: {}
+[8.962070] (-) TimerEvent: {}
+[9.063101] (-) TimerEvent: {}
+[9.163965] (-) TimerEvent: {}
+[9.264810] (-) TimerEvent: {}
+[9.365617] (-) TimerEvent: {}
+[9.466453] (-) TimerEvent: {}
+[9.567335] (-) TimerEvent: {}
+[9.668148] (-) TimerEvent: {}
+[9.769069] (-) TimerEvent: {}
+[9.869907] (-) TimerEvent: {}
+[9.970724] (-) TimerEvent: {}
+[10.071589] (-) TimerEvent: {}
+[10.172393] (-) TimerEvent: {}
+[10.273259] (-) TimerEvent: {}
+[10.374097] (-) TimerEvent: {}
+[10.474928] (-) TimerEvent: {}
+[10.575768] (-) TimerEvent: {}
+[10.676585] (-) TimerEvent: {}
+[10.777466] (-) TimerEvent: {}
+[10.878313] (-) TimerEvent: {}
+[10.979160] (-) TimerEvent: {}
+[11.079972] (-) TimerEvent: {}
+[11.180816] (-) TimerEvent: {}
+[11.281620] (-) TimerEvent: {}
+[11.382446] (-) TimerEvent: {}
+[11.483285] (-) TimerEvent: {}
+[11.584082] (-) TimerEvent: {}
+[11.684933] (-) TimerEvent: {}
+[11.785756] (-) TimerEvent: {}
+[11.886643] (-) TimerEvent: {}
+[11.987537] (-) TimerEvent: {}
+[12.088353] (-) TimerEvent: {}
+[12.189208] (-) TimerEvent: {}
+[12.290060] (-) TimerEvent: {}
+[12.390896] (-) TimerEvent: {}
+[12.491746] (-) TimerEvent: {}
+[12.592624] (-) TimerEvent: {}
+[12.693456] (-) TimerEvent: {}
+[12.794266] (-) TimerEvent: {}
+[12.895160] (-) TimerEvent: {}
+[12.995983] (-) TimerEvent: {}
+[13.096848] (-) TimerEvent: {}
+[13.197696] (-) TimerEvent: {}
+[13.298500] (-) TimerEvent: {}
+[13.399419] (-) TimerEvent: {}
+[13.500216] (-) TimerEvent: {}
+[13.601088] (-) TimerEvent: {}
+[13.701921] (-) TimerEvent: {}
+[13.802747] (-) TimerEvent: {}
+[13.903606] (-) TimerEvent: {}
+[14.004473] (-) TimerEvent: {}
+[14.105321] (-) TimerEvent: {}
+[14.206164] (-) TimerEvent: {}
+[14.307001] (-) TimerEvent: {}
+[14.407840] (-) TimerEvent: {}
+[14.508661] (-) TimerEvent: {}
+[14.609472] (-) TimerEvent: {}
+[14.710308] (-) TimerEvent: {}
+[14.811165] (-) TimerEvent: {}
+[14.911982] (-) TimerEvent: {}
+[15.012857] (-) TimerEvent: {}
+[15.113786] (-) TimerEvent: {}
+[15.214630] (-) TimerEvent: {}
+[15.315473] (-) TimerEvent: {}
+[15.416358] (-) TimerEvent: {}
+[15.517211] (-) TimerEvent: {}
+[15.618053] (-) TimerEvent: {}
+[15.718898] (-) TimerEvent: {}
+[15.819775] (-) TimerEvent: {}
+[15.920646] (-) TimerEvent: {}
+[16.021513] (-) TimerEvent: {}
+[16.083438] (fish_sensor_pkg) StderrLine: {'line': b'\x1b[01m\x1b[K/home/a-raspi1/fishing_ws/src/fish_sensor_pkg/src/mpu6500.cpp:15:1:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kno declaration matches \xe2\x80\x98\x1b[01m\x1b[KMPU6500::MPU6500(const string&, uint8_t)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[16.084583] (fish_sensor_pkg) StderrLine: {'line': b'   15 | \x1b[01;31m\x1b[KMPU6500\x1b[m\x1b[K::MPU6500(const std::string& bus, uint8_t address) {\n'}
+[16.085103] (fish_sensor_pkg) StderrLine: {'line': b'      | \x1b[01;31m\x1b[K^~~~~~~\x1b[m\x1b[K\n'}
+[16.085558] (fish_sensor_pkg) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/a-raspi1/fishing_ws/src/fish_sensor_pkg/src/mpu6500.cpp:1\x1b[m\x1b[K:\n'}
+[16.086003] (fish_sensor_pkg) StderrLine: {'line': b'\x1b[01m\x1b[K/home/a-raspi1/fishing_ws/src/fish_sensor_pkg/include/fish_sensor_pkg/mpu6500.hpp:14:7:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidates are: \xe2\x80\x98\x1b[01m\x1b[KMPU6500::MPU6500(MPU6500&&)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[16.086434] (fish_sensor_pkg) StderrLine: {'line': b'   14 | class \x1b[01;36m\x1b[KMPU6500\x1b[m\x1b[K {\n'}
+[16.086834] (fish_sensor_pkg) StderrLine: {'line': b'      |       \x1b[01;36m\x1b[K^~~~~~~\x1b[m\x1b[K\n'}
+[16.087400] (fish_sensor_pkg) StderrLine: {'line': b'\x1b[01m\x1b[K/home/a-raspi1/fishing_ws/src/fish_sensor_pkg/include/fish_sensor_pkg/mpu6500.hpp:14:7:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K                \xe2\x80\x98\x1b[01m\x1b[KMPU6500::MPU6500(const MPU6500&)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[16.087847] (fish_sensor_pkg) StderrLine: {'line': b'\x1b[01m\x1b[K/home/a-raspi1/fishing_ws/src/fish_sensor_pkg/include/fish_sensor_pkg/mpu6500.hpp:17:5:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K                \xe2\x80\x98\x1b[01m\x1b[KMPU6500::MPU6500(const string&, uint8_t, rclcpp::Logger)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[16.088378] (fish_sensor_pkg) StderrLine: {'line': b'   17 |     \x1b[01;36m\x1b[KMPU6500\x1b[m\x1b[K(const std::string& bus, uint8_t address, rclcpp::Logger logger);\n'}
+[16.089040] (fish_sensor_pkg) StderrLine: {'line': b'      |     \x1b[01;36m\x1b[K^~~~~~~\x1b[m\x1b[K\n'}
+[16.089587] (fish_sensor_pkg) StderrLine: {'line': b'\x1b[01m\x1b[K/home/a-raspi1/fishing_ws/src/fish_sensor_pkg/include/fish_sensor_pkg/mpu6500.hpp:14:7:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kclass MPU6500\x1b[m\x1b[K\xe2\x80\x99 defined here\n'}
+[16.090027] (fish_sensor_pkg) StderrLine: {'line': b'   14 | class \x1b[01;36m\x1b[KMPU6500\x1b[m\x1b[K {\n'}
+[16.090460] (fish_sensor_pkg) StderrLine: {'line': b'      |       \x1b[01;36m\x1b[K^~~~~~~\x1b[m\x1b[K\n'}
+[16.121726] (-) TimerEvent: {}
+[16.222560] (-) TimerEvent: {}
+[16.323421] (-) TimerEvent: {}
+[16.424282] (-) TimerEvent: {}
+[16.525087] (-) TimerEvent: {}
+[16.625918] (-) TimerEvent: {}
+[16.726733] (-) TimerEvent: {}
+[16.827591] (-) TimerEvent: {}
+[16.928472] (-) TimerEvent: {}
+[17.029333] (-) TimerEvent: {}
+[17.130285] (-) TimerEvent: {}
+[17.231211] (-) TimerEvent: {}
+[17.332102] (-) TimerEvent: {}
+[17.432961] (-) TimerEvent: {}
+[17.533802] (-) TimerEvent: {}
+[17.634682] (-) TimerEvent: {}
+[17.735728] (-) TimerEvent: {}
+[17.826094] (fish_sensor_pkg) StderrLine: {'line': b'gmake[2]: *** [CMakeFiles/mpu6500.dir/build.make:76: CMakeFiles/mpu6500.dir/src/mpu6500.cpp.o] \xe3\x82\xa8\xe3\x83\xa9\xe3\x83\xbc 1\n'}
+[17.827413] (fish_sensor_pkg) StderrLine: {'line': b'gmake[1]: *** [CMakeFiles/Makefile2:171: CMakeFiles/mpu6500.dir/all] \xe3\x82\xa8\xe3\x83\xa9\xe3\x83\xbc 2\n'}
+[17.828693] (fish_sensor_pkg) StderrLine: {'line': b'gmake: *** [Makefile:146: all] \xe3\x82\xa8\xe3\x83\xa9\xe3\x83\xbc 2\n'}
+[17.836147] (-) TimerEvent: {}
+[17.857810] (fish_sensor_pkg) CommandEnded: {'returncode': 2}
+[17.924265] (fish_sensor_pkg) JobEnded: {'identifier': 'fish_sensor_pkg', 'rc': 2}
+[17.936757] (-) EventReactorShutdown: {}
