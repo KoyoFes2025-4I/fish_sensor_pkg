@@ -1,8 +1,0 @@
-[ 20%] Built target i2c_device
-[ 40%] Built target madgwick_filter
-[ 60%] Built target as5600
-[ 70%] [32mBuilding CXX object CMakeFiles/mpu6500.dir/src/mpu6500.cpp.o[0m
-[ 80%] [32m[1mLinking CXX static library libmpu6500.a[0m
-[ 80%] Built target mpu6500
-[ 90%] [32mBuilding CXX object CMakeFiles/fish_sensor_node.dir/src/fish_sensor_node.cpp.o[0m
-[100%] [32m[1mLinking CXX executable fish_sensor_node[0m

@@ -1,2 +1,0 @@
-/usr/bin/ar qc libmpu6500.a CMakeFiles/mpu6500.dir/src/mpu6500.cpp.o
-/usr/bin/ranlib libmpu6500.a

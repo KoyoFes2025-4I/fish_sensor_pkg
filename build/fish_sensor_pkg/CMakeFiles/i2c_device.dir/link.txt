@@ -1,2 +1,0 @@
-/usr/bin/ar qc libi2c_device.a CMakeFiles/i2c_device.dir/src/i2c_device.cpp.o
-/usr/bin/ranlib libi2c_device.a

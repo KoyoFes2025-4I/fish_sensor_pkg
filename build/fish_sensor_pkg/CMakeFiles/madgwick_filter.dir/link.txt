@@ -1,2 +1,0 @@
-/usr/bin/ar qc libmadgwick_filter.a CMakeFiles/madgwick_filter.dir/src/madgwick_filter.cpp.o
-/usr/bin/ranlib libmadgwick_filter.a

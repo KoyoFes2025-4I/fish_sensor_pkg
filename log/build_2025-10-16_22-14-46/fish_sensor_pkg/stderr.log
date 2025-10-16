@@ -1,5 +1,0 @@
-/usr/bin/ld: -lrclcpp が見つかりません: そのようなファイルやディレクトリはありません
-collect2: error: ld returned 1 exit status
-gmake[2]: *** [CMakeFiles/fish_sensor_node.dir/build.make:179: fish_sensor_node] エラー 1
-gmake[1]: *** [CMakeFiles/Makefile2:252: CMakeFiles/fish_sensor_node.dir/all] エラー 2
-gmake: *** [Makefile:146: all] エラー 2
