@@ -13,6 +13,6 @@ fish_sensor_node:
     # 釣り竿ID: 1 の設定
     rod_1:
       i2c_bus_mpu: "/dev/i2c-4"
-      i2c_addr_mpu: 0x69
+      i2c_addr_mpu: 0x68
       i2c_bus_as: "/dev/i2c-4"
       i2c_addr_as: 0x36
