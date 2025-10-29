@@ -63,7 +63,7 @@ public:
         rotation_pub_ = this->create_publisher<std_msgs::msg::String>("/fish/ctrl/out", 10);
         yaw_pub_ = this->create_publisher<std_msgs::msg::Float64>("/fish/imu/yaw_angle", 10);
 
-        timer_ = this->create_wall_timer(10ms, std::bind(&FishSensorNode::timer_callback, this));
+        timer_ = this->create_wall_timer(30ms, std::bind(&FishSensorNode::timer_callback, this));
         last_time_ = this->now();
     }
 
