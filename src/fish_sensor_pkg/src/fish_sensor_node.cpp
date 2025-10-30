@@ -25,8 +25,17 @@ struct FishingRod {
     double gyro_offset_y = 0.0;
     double gyro_offset_z = 0.0;
 
+    // AS5600用
     double last_angle_deg = 0.0;
     bool first_angle_reading = true;
+
+    // ヨー角積分用
+    double yaw_angle = 0.0;
+    
+    // ロッド専用のPublisher
+    rclcpp::Publisher<std_msgs::msg::Float64>::SharedPtr yaw_publisher;
+
+    rclcpp::Publisher<std_msgs::msg::Float64>::SharedPtr rotation_publisher;
 };
 
 class FishSensorNode : public rclcpp::Node {
@@ -53,6 +62,14 @@ public:
                 this->get_parameter("rod_" + id_str + ".i2c_bus_as").as_string(),
                 this->get_parameter("rod_" + id_str + ".i2c_addr_as").as_int()
             );
+            
+            // ヨー角Publisher
+            std::string yaw_topic_name = "/fish/imu/yaw_angle/rod_" + rod->frame_id;
+            rod->yaw_publisher = this->create_publisher<std_msgs::msg::Float64>(yaw_topic_name, 10);
+
+            std::string rot_topic_name = "/fish/ctrl/rotation_speed/rod_" + rod->frame_id;
+            rod->rotation_publisher = this->create_publisher<std_msgs::msg::Float64>(rot_topic_name, 10);
+            
             rods_.push_back(std::move(rod));
         }
 
@@ -60,8 +77,8 @@ public:
 
         // Publisher
         raw_imu_pub_ = this->create_publisher<sensor_msgs::msg::Imu>("/fish/imu/data_raw", 10);
-        rotation_pub_ = this->create_publisher<std_msgs::msg::String>("/fish/ctrl/out", 10);
-        yaw_pub_ = this->create_publisher<std_msgs::msg::Float64>("/fish/imu/yaw_angle", 10);
+
+        rotation_pub_ = this->create_publisher<std_msgs::msg::String>("/fish/ctrl/out", 10); 
 
         timer_ = this->create_wall_timer(30ms, std::bind(&FishSensorNode::timer_callback, this));
         last_time_ = this->now();
@@ -69,7 +86,7 @@ public:
 
 private:
     // ------------------------------------------
-    // センサー初期化 & キャリブレーション
+    // センサー初期化 & キャリブレーション 
     // ------------------------------------------
     void initialize_sensors() {
         for (auto& rod : rods_) {
@@ -80,7 +97,7 @@ private:
                 rod->mpu_active = true;
                 RCLCPP_INFO(this->get_logger(), "  -> MPU6500 connected. Calibrating...");
 
-                // ジャイロオフセット測定（静止状態で約1秒）
+                // ジャイロオフセット測定
                 double gx_sum = 0, gy_sum = 0, gz_sum = 0;
                 const int sample_count = 100;
                 for (int i = 0; i < sample_count; ++i) {
@@ -121,6 +138,7 @@ private:
         double dt = (current_time - last_time_).seconds();
         if (dt <= 0) return;
 
+
         for (auto& rod : rods_) {
             if (rod->mpu_active) {
                 try {
@@ -133,17 +151,12 @@ private:
 
                     sensor_msgs::msg::Imu msg;
                     msg.header.stamp = current_time;
-                    msg.header.frame_id = rod->frame_id;
+                    msg.header.frame_id = rod->frame_id; 
 
                     msg.orientation.w = 1.0;
-                    msg.orientation.x = 0.0;
-                    msg.orientation.y = 0.0;
-                    msg.orientation.z = 0.0;
-
                     msg.angular_velocity.x = raw.gx;
                     msg.angular_velocity.y = raw.gy;
                     msg.angular_velocity.z = raw.gz;
-
                     msg.linear_acceleration.x = raw.ax;
                     msg.linear_acceleration.y = raw.ay;
                     msg.linear_acceleration.z = raw.az;
@@ -151,10 +164,11 @@ private:
                     raw_imu_pub_->publish(msg);
 
                     // ヨー角積分
-                    yaw_angle_ += raw.gz * dt;
+                    rod->yaw_angle += raw.gz * dt; 
                     std_msgs::msg::Float64 yaw_msg;
-                    yaw_msg.data = yaw_angle_;
-                    yaw_pub_->publish(yaw_msg);
+                    yaw_msg.data = rod->yaw_angle;
+                    
+                    rod->yaw_publisher->publish(yaw_msg);
 
                 } catch (const std::exception& e) {
                     RCLCPP_ERROR(this->get_logger(),
@@ -162,8 +176,10 @@ private:
                                  rod->id, e.what());
                 }
             }
+        }
 
-            // AS5600 処理（回転速度）
+        // 全ロッドのAS5600処理
+        for (auto& rod : rods_) {
             if (rod->as_active) {
                 try {
                     double ang = rod->as->getAngleDeg();
@@ -175,23 +191,26 @@ private:
                         if (diff > 180.0) diff -= 360.0;
                         if (diff < -180.0) diff += 360.0;
 
-                        // ★ 角度差をラジアンに変換してから速度計算
                         double diff_rad = diff * M_PI / 180.0;
                         double rot_speed = diff_rad / dt;  // rad/s
 
-                        std_msgs::msg::String msg;
-                        msg.data = rod->frame_id + "," + std::to_string(rot_speed);
-                        rotation_pub_->publish(msg);
+
+                        std_msgs::msg::String string_msg;
+                        string_msg.data = rod->frame_id + "," + std::to_string(rot_speed); 
+                        rotation_pub_->publish(string_msg);
+
+                        std_msgs::msg::Float64 float_msg;
+                        float_msg.data = rot_speed;
+                        rod->rotation_publisher->publish(float_msg);
 
                         rod->last_angle_deg = ang;
                     }
                 } catch (const std::exception& e) {
                     RCLCPP_ERROR(this->get_logger(),
-                                "Error reading AS5600 (rod %d): %s",
-                                rod->id, e.what());
+                                 "Error reading AS5600 (rod %d): %s",
+                                 rod->id, e.what());
                 }
             }
-
         }
 
         last_time_ = current_time;
@@ -202,11 +221,9 @@ private:
     // ------------------------------------------
     rclcpp::TimerBase::SharedPtr timer_;
     rclcpp::Publisher<sensor_msgs::msg::Imu>::SharedPtr raw_imu_pub_;
-    rclcpp::Publisher<std_msgs::msg::String>::SharedPtr rotation_pub_;
-    rclcpp::Publisher<std_msgs::msg::Float64>::SharedPtr yaw_pub_;
+    rclcpp::Publisher<std_msgs::msg::String>::SharedPtr rotation_pub_; // String型
     std::vector<std::unique_ptr<FishingRod>> rods_;
     rclcpp::Time last_time_;
-    double yaw_angle_ = 0.0;
 };
 
 int main(int argc, char *argv[]) {
