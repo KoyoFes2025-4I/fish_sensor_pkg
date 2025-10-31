@@ -1,75 +1,109 @@
 import os
+import yaml 
 from ament_index_python.packages import get_package_share_directory
 from launch import LaunchDescription
 from launch_ros.actions import Node
+from launch_ros.descriptions import ComposableNode
+from launch_ros.actions import ComposableNodeContainer
 
 def generate_launch_description():
     pkg_name = 'fish_sensor_pkg'
+    share_dir = get_package_share_directory(pkg_name)
     
-    params_file = os.path.join(
-        get_package_share_directory(pkg_name),
-        'params',
-        'fish_sensor_params.yaml'
-    )
+    
+    
+    
+    params_file_path = os.path.join(share_dir, 'params', 'fish_sensor_params.yaml')
 
-    # -------------------------------------------------------
-    # ノード 1: センサーノード (自作)
-    # /fish/imu/data_raw (生データ) と /fish/ctrl/out (回転) を発行
-    # -------------------------------------------------------
+    with open(params_file_path, 'r') as f:
+        try:
+            params = yaml.safe_load(f)
+            
+            rod_ids = params['fish_sensor_node']['ros__parameters']['rod_ids']
+        except Exception as e:
+            print(f"Error loading or parsing params.yaml: {e}")
+            return LaunchDescription() 
+
+    if not rod_ids:
+        print("rod_ids not found or empty in params.yaml!")
+        return LaunchDescription()
+
+    
+    
+    
     sensor_node = Node(
         package=pkg_name,
         executable='fish_sensor_node',
         name='fish_sensor_node',
         output='screen',
         emulate_tty=True,
-        parameters=[params_file]
+        parameters=[params_file_path] 
     )
+
     
-    # -------------------------------------------------------
-    # ノード 2: Madgwickフィルター (姿勢計算)
-    # 入力: /fish/imu/data_raw
-    # 出力: /fish/imu/data_with_orientation
-    # -------------------------------------------------------
-    madgwick_filter_node = Node(
-        package='imu_filter_madgwick',
-        executable='imu_filter_madgwick_node',
-        name='madgwick_filter_node',
-        output='screen',
-        parameters=[{
-            'use_mag': False,
-            'publish_tf': True,
-            'world_frame': 'enu',
-            'gain': 0.02,         # 姿勢変化をゆっくりに（ノイズ減）
-            'zeta': 0.005,        # ジャイロドリフト補正をわずかに有効化
-            'sample_freq': 100.0,
-        }],
-        remappings=[
-            ('imu/data_raw', '/fish/imu/data_raw'),
-            ('imu/data', '/fish/imu/data_with_orientation'),
-        ]
-    )
+    
+    
+    
+    
+    nodes_to_launch = [sensor_node]
+    
+    for rod_id in rod_ids:
+        
+        raw_topic = f'/fish/imu/data_raw/rod_{rod_id}'
+        oriented_topic = f'/fish/imu/data_with_orientation/rod_{rod_id}'
+        
+        
+        final_topic = f'/fish/ctrl/imu/rod_{rod_id}' 
+        
+        madgwick_node_name = f'madgwick_filter_node_{rod_id}'
+        gravity_node_name = f'gravity_canceler_node_{rod_id}'
+        container_name = f'imu_filter_container_{rod_id}'
 
-    # -------------------------------------------------------
-    # ノード 3: 重力除去フィルター (自作ノード)
-    # 入力: /fish/imu/data_with_orientation
-    # 出力: /fish/ctrl/imu
-    # -------------------------------------------------------
-    gravity_canceler_node = Node(
-        package=pkg_name,
-        executable='gravity_canceler_node',
-        name='gravity_canceler_node',
-        output='screen',
-        parameters=[{
-            'publish_imu': True,
-        }],
-        remappings=[
-            ('imu/data_in', '/fish/imu/data_with_orientation'),  # 入力
-            ('imu/data_out', '/fish/ctrl/imu'),                 # 出力
-        ]
-    )
+        
+        madgwick_filter_node = Node(
+            package='imu_filter_madgwick',
+            executable='imu_filter_madgwick_node',
+            name=madgwick_node_name,
+            output='screen',
+            parameters=[{
+                'use_mag': False,
+                'publish_tf': False,
+                'world_frame': 'enu',
+            }],
+            remappings=[
+                ('imu/data_raw', raw_topic),      
+                ('imu/data', oriented_topic),     
+            ]
+        )
 
-    return LaunchDescription([
-        sensor_node,
-        madgwick_filter_node,
-        gravity_canceler_node
-    ])
+        
+        gravity_canceler_node = ComposableNode(
+            package='imu_tools',
+            plugin='imu_tools::GravityCancelerNode',
+            name=gravity_node_name,
+            parameters=[{
+                'publish_imu': True,
+            }],
+            remappings=[
+                ('imu/data_with_orientation', oriented_topic), 
+                ('imu/data', final_topic),                    
+            ]
+        )
+
+        
+        container = ComposableNodeContainer(
+            name=container_name,
+            namespace='',
+            package='rclcpp_components',
+            executable='component_container',
+            composable_node_descriptions=[
+                gravity_canceler_node,
+            ],
+            output='screen'
+        )
+        
+        
+        nodes_to_launch.append(madgwick_filter_node)
+        nodes_to_launch.append(container)
+
+    return LaunchDescription(nodes_to_launch)
