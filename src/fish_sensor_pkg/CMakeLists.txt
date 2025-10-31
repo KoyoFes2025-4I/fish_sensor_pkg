@@ -72,13 +72,9 @@ target_link_libraries(fish_sensor_node
 # GravityCanceler Node
 # =========================================================
 add_executable(gravity_canceler_node src/gravity_canceler_node.cpp)
-ament_target_dependencies(gravity_canceler_node
-  rclcpp
-  sensor_msgs
-  tf2
-  tf2_geometry_msgs
-  Eigen3
-)
+ament_target_dependencies(gravity_canceler_node rclcpp sensor_msgs tf2 tf2_geometry_msgs Eigen3)
+install(TARGETS gravity_canceler_node DESTINATION lib/${PROJECT_NAME})
+
 
 # =========================================================
 # Install Targets
